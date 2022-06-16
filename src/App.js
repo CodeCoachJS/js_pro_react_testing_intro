@@ -1,25 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import WelcomeBanner from './components/WelcomeBanner';
+import ProductList from './components/ProductList';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const user = JSON.parse(localStorage.getItem('user')) || {};
+
+    return (
+        <div className="App">
+            <WelcomeBanner
+                firstName={user.firstName}
+                isReturning={user.logins >= 1}
+            />
+            <ProductList />
+        </div>
+    );
 }
 
 export default App;
