@@ -4,7 +4,9 @@ const WelcomeBanner = ({ firstName, isReturning }) => {
 
     return (
         <section>
-            <h3>{`${greeting}${separator}${firstName || ''}`}</h3>
+            <h3 data-testid="greeting">{`${greeting}${separator}${
+                firstName || ''
+            }`}</h3>
         </section>
     );
 };

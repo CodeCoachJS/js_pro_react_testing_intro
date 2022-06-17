@@ -13,7 +13,7 @@ const ProductList = () => {
     const [total, setTotal] = useState(0);
 
     const addToCart = (item) => {
-        setTotal((prev) => (prev += 1 || item.price));
+        setTotal((prev) => (prev += item.price));
     };
 
     if (error) {
