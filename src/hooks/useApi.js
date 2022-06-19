@@ -17,12 +17,12 @@ const useApi = ({ url, config = {} }) => {
                 setIsLoading(true);
                 const res = await fetch(url, { config });
                 const json = await res.json();
+
                 setData(json);
                 setIsLoading(false);
             } catch (e) {
-                setError(e);
+                setError(JSON.stringify(e));
                 setIsLoading(false);
-                throw new Error(e);
             }
         };
         fetchData(url);

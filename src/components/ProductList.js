@@ -41,7 +41,10 @@ const ProductList = () => {
                                 alt={product.title}
                             />
                             <p>${product.price.toFixed(2)}</p>
-                            <button onClick={() => addToCart(product)}>
+                            <button
+                                data-testid={`btn-${product.id}`}
+                                onClick={() => addToCart(product)}
+                            >
                                 Add To Cart
                             </button>
                         </div>
