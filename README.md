@@ -16,26 +16,16 @@ https://testing-library.com/docs/react-testing-library/intro/
 
 ---
 
-### Intro to Writing Tests - The React Way!
+### Writing Tests For Components that Fetch Data Asynchronosuly
 
-https://www.loom.com/share/e68d174317624ef5ab5b001ff9221ff9
-
----
-
-### Writing Tests with `getById` and `getByText`
-
-https://www.loom.com/share/e9153ee088474d8294ce716d16f5b640
+https://www.loom.com/share/c870ac04bc3a45299eea1e3a04d32431
 
 ---
 
-### Writing Tests with Truth Tables
+### Writing Tests for User Events
 
-https://www.loom.com/share/19c8fcd5bba34450b5be135646aba66c
-
-https://levelup.gitconnected.com/using-truth-tables-to-write-better-unit-tests-dd187f4a08e6
-
----
+https://www.loom.com/share/160df5cd8cc44f18b5d10e4b68327042
 
 ### Your Turn
 
-Watch the videos above and complete the `TODO`s in `src/components/WelcomeBanner.spec.js` - try and NOT copy what was done in the videos. These tests should be your own and feel free to change any code or make any additions you feel necessary!
+Watch the videos above and complete the `TODO`s in `src/components/ProductList.spec.js` - try and NOT copy what was done in the videos. These tests should be your own and feel free to change any code or make any additions you feel necessary!
