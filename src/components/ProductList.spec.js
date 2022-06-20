@@ -27,8 +27,4 @@ describe('ProductList', () => {
         render(<ProductList />);
         // TODO: add your tests here
     });
-
-    it('shows an error message', async () => {
-        // TODO: add your tests here
-    });
 });
