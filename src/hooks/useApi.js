@@ -22,7 +22,6 @@ const useApi = ({ url, config = {} }) => {
             } catch (e) {
                 setError(e);
                 setIsLoading(false);
-                throw new Error(e);
             }
         };
         fetchData(url);
