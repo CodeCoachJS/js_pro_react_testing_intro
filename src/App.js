@@ -4,6 +4,7 @@ import ProductList from './components/ProductList';
 
 function App() {
     const user = JSON.parse(localStorage.getItem('user')) || {};
+
     return (
         <div className="App">
             <WelcomeBanner

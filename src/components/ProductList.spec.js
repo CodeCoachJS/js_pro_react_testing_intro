@@ -1,8 +1,6 @@
 import { screen, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import ProductList from './ProductList';
-import * as aws from '@aws-sdk/client-s3';
-
-jest.mock('@aws-sdk/client-s3');
 
 global.fetch = async () =>
     Promise.resolve({
@@ -17,30 +15,16 @@ global.fetch = async () =>
             ]),
     });
 
-describe.only('ProductList', () => {
-    it('uses data from s3 for product images', async () => {
-        aws.S3Client = function S3() {
-            this.send = () => Promise.resolve('https://aws-image.com');
-        };
-        aws.GetObjectCommand = function GetObjectCommand() {};
-
+describe('ProductList', () => {
+    it('shows a loader and some products', async () => {
         render(<ProductList />);
 
-        expect(
-            await screen.findByTestId('https://aws-image.com')
-        ).toBeInTheDocument();
+        expect(screen.getByText('Loading...')).toBeInTheDocument();
+        expect(await screen.findByText('$123.00')).toBeInTheDocument();
     });
 
-    it('falls back to the original image if s3 fails', async () => {
-        aws.S3Client = function S3() {
-            this.send = () => Promise.reject(new Error('BOOM'));
-        };
-        aws.GetObjectCommand = function GetObjectCommand() {};
-
+    it('adds to the total when a user adds to cart', async () => {
         render(<ProductList />);
-
-        expect(
-            await screen.findByTestId('https://www.image1.com')
-        ).toBeInTheDocument();
+        // TODO: add your tests here
     });
 });
