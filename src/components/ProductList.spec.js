@@ -26,5 +26,17 @@ describe('ProductList', () => {
     it('adds to the total when a user adds to cart', async () => {
         render(<ProductList />);
         // TODO: add your tests here
+        const btn = await screen.findByTestId('btn-id');
+        userEvent.click(btn);
+
+        expect(
+            await screen.findByText('Your Total: $123.00')
+        ).toBeInTheDocument();
+
+        userEvent.click(btn);
+
+        expect(
+            await screen.findByText('Your Total: $246.00')
+        ).toBeInTheDocument();
     });
 });
