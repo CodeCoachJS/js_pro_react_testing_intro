@@ -17,7 +17,7 @@ global.fetch = async () =>
             ]),
     });
 
-describe.only('ProductList', () => {
+describe('ProductList', () => {
     it('uses data from s3 for product images', async () => {
         aws.S3Client = function S3() {
             this.send = () => Promise.resolve('https://aws-image.com');

@@ -16,16 +16,10 @@ https://testing-library.com/docs/react-testing-library/intro/
 
 ---
 
-### Writing Tests For Components that Fetch Data Asynchronosuly
+### Writing Tests For Components that Use a 3rd Party Dependency
 
-https://www.loom.com/share/c870ac04bc3a45299eea1e3a04d32431
-
----
-
-### Writing Tests for User Events
-
-https://www.loom.com/share/160df5cd8cc44f18b5d10e4b68327042
+TLDR 👉 use mocks https://jestjs.io/docs/mock-functions
 
 ### Your Turn
 
-Watch the videos above and complete the `TODO`s in `src/components/ProductList.spec.js` - try and NOT copy what was done in the videos. These tests should be your own and feel free to change any code or make any additions you feel necessary!
+Watch the video above and complete the `TODO`s in `src/components/ProductList.spec.js` - try and NOT copy what was done in the videos. These tests should be your own and feel free to change any code or make any additions you feel necessary!
