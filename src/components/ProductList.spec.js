@@ -19,10 +19,35 @@ global.fetch = async () =>
 
 describe('ProductList', () => {
     it('uses data from s3 for product images', async () => {
-        // TODO: write your test here
+        const awsImgUrl = 'https://awsimage.com';
+        aws.S3Client = function () {
+            return {
+                send: async () => Promise.resolve(awsImgUrl),
+            };
+        };
+
+        aws.GetObjectCommand = function () {
+            return;
+        };
+
+        render(<ProductList />);
+        expect(await screen.findByTestId(awsImgUrl)).toBeInTheDocument();
     });
 
     it('falls back to the original image if s3 fails', async () => {
-        // TODO: write your test here
+        aws.S3Client = function () {
+            return {
+                send: async () => Promise.reject('BOOM'),
+            };
+        };
+
+        aws.GetObjectCommand = function () {
+            return;
+        };
+
+        render(<ProductList />);
+        expect(
+            await screen.findByTestId('https://www.image1.com')
+        ).toBeInTheDocument();
     });
 });
